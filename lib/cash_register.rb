@@ -55,7 +55,7 @@ class CashRegister
 #save add item to last transaction
 #take total and items list, and remove last transaction
     self.total -= self.last_transaction
-    self.title -= self.last_item
+    @title.pop
   end
 
 end
