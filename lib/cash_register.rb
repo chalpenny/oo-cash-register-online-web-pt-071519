@@ -15,10 +15,12 @@ class CashRegister
     @total
   end
 
-  def add_item(title, price, quantity = 0)
-    quantity == 0 ? @total += price : @total += (price.to_f * quantity)
-    @title << title * quantity
-  #  binding.pry
+  def add_item(title, price, quantity = 1)
+    quantity == 1 ? @total += price : @total += (price.to_f * quantity)
+    quantity.times do
+      @title << title
+    #binding.pry
+    end
   end
 
   def apply_discount
