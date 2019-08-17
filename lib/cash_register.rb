@@ -53,7 +53,7 @@ class CashRegister
   def void_last_transaction
 #save add item to last transaction
 #take total and items list, and remove last transaction
-    self.total -= self.last_transaction 
+    self.total -= self.last_transaction
   end
 
 end
