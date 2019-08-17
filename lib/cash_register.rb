@@ -16,8 +16,8 @@ class CashRegister
   end
 
   def add_item(title, price, quantity = 0)
-    quantity == 0 ? @total += price : @total += (price.to_f * quantity.to_f)
-    @title << title * (quantity.split(" "))
+    quantity == 0 ? @total += price : @total += (price.to_f * quantity)
+    @title << title * quantity
     binding.pry
   end
 
