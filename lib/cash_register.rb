@@ -1,7 +1,7 @@
 require 'pry'
 
 class CashRegister
-    attr_accessor :total, :discount, :quantity, :title
+    attr_accessor :total, :discount, :quantity, :title, :last_transaction
 
   def initialize(discount = 0)
     @total = total
@@ -19,8 +19,8 @@ class CashRegister
     quantity == 1 ? @total += price : @total += (price.to_f * quantity)
     quantity.times do
       @title << title
-    #binding.pry
     end
+    self.last_transaction = price * quantity
   end
 
   def apply_discount
@@ -35,7 +35,6 @@ class CashRegister
 
   def items
     @title
-#    binding.pry
   end
 
 #  def add_item(title, price, quantity = 0)
@@ -52,7 +51,9 @@ class CashRegister
 #  end
 
   def void_last_transaction
-
+#save add item to last transaction
+#take total and items list, and remove last transaction
+    self.total -= self.last_transaction 
   end
 
 end
